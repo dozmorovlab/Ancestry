@@ -5,44 +5,12 @@ Figures: https://docs.google.com/presentation/d/1mwSDvPSpa1S0DQtcua2zZLOZdVX32bX
 Repository: https://github.com/VCUWrightCenter/U4HELPP_PDXProgram
 
 ## Notes
-* `00_*` are helper scripts, not really part of main pipeline
+* `00_*` are helper scripts, used when needed
 * BAM files must have @RG tags to work properly with GATK
     * See https://gatk.broadinstitute.org/hc/en*us/articles/360035890671*Read*groups
     * `02b_Add_RG.sh`
 * RNA-Seq BAM files start with `01_MarkDuplicates.sh`
-* WGS BAM files were started from `04_HaplotypeCaller_WGS.sh` with previous U54 files, with freshly aligned 
-
-## Todo
-
-### Predictions on existing `.vcf` files
-* Filtered GATK
-    * RNA-Seq (Done)
-    * WG (Done)
-* Unfiltered GATK
-    * RNA-Seq
-    * WGS
-* Filtered JAX
-    * RNA-Seq
-    * WGS
-* Unfiltered JAX
-    * RNA-Seq
-    * WGS
-
-### Generate samples without xengsort
-* Obtain FASTQ files (`/lustre/home/harrell_lab/bulkRNASeq`)
-* FASTQ (reads) -> BAM (Alignmet to reference) -> VCF (Variants) -> Tools for prediction
-* Process and align to BAM files (same parameters as sample RNA-Seq (Dr. Olex) and WGS (Dr. Tyc))
-* Run ancestry scripts / pipelines
-
-### 1000 Genomes VCF files
-* RNA-Seq
-    * https://github.com/mccoy*lab/MAGE 
-    * PRJNA851328
-    * download (`module load sratoolkit`), merge chromosomes, and split to individual samples
-* WGS
-    * https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000G_2504_high_coverage/working/20201028_3202_phased/
-    * merge chromosomes and split to individual samples
-* Run ancestry scripts / pipelines
+* WGS BAM files were started from `04_HaplotypeCaller_WGS.sh`
 
 ## Scripts
 
